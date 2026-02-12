@@ -1,16 +1,22 @@
-# React + Vite
+Genshin1-ai
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Why did I choose this theme?
+- I choose this theme because I want to play this Genshin Impact and I want to experience how's the quality of the game or is this better than any of the game
 
-Currently, two official plugins are available:
+What is this Chatbot?
+- This ChatBot is created by Justin Miguel L. De Paz
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Key Benefits for the User
+Why would someone use Genshin1.AI? and for what is this chatbot?
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+How to use this chatbot (Manual)
+<img width="1919" height="944" alt="image" src="https://github.com/user-attachments/assets/da20aba8-2fdc-4fdf-b172-1b4e77f0c264" />
+<img width="1917" height="943" alt="image" src="https://github.com/user-attachments/assets/0da0d224-ef9e-4eed-8648-ecf49e39560f" />
+<img width="1916" height="942" alt="image" src="https://github.com/user-attachments/assets/c1e83537-5739-499b-8425-7f373320a4e4" />
+<img width="1919" height="945" alt="image" src="https://github.com/user-attachments/assets/25d96e16-90fb-4d89-a3d9-879c5e3a629e" />
+<img width="1919" height="946" alt="image" src="https://github.com/user-attachments/assets/5afe3f3c-9418-4c15-bd2e-a06f60859e9d" />
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+
