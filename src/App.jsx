@@ -114,7 +114,7 @@ const GenshinChat = () => {
   };
 
   return (
-    <div className="flex w-full h-screen overflow-hidden bg-[#0c0b0a] font-sans text-white select-none relative italic-font">
+    <div className="flex w-full h-screen overflow-hidden bg-black font-sans text-white select-none relative italic-font">
 
       {/* --- SIDEBAR SWIPE HANDLE (Mobile Only) --- */}
       {!isSidebarOpen && (
@@ -134,7 +134,18 @@ const GenshinChat = () => {
 
       {/* --- BACKGROUND LAYER --- */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <motion.div key={currentPersona} initial={{ opacity: 0, scale: 1.1 }} animate={{ opacity: 0.9, scale: 1 }} transition={{ duration: 1.5 }}
+        <motion.div key={currentPersona}
+          initial={{ opacity: 0, scale: 1.1 }}
+          animate={{
+            opacity: 0.9,
+            scale: [1, 1.05, 1],
+            y: [0, -30, 0]
+          }}
+          transition={{
+            opacity: { duration: 1.5 },
+            scale: { duration: 20, repeat: Infinity, ease: "easeInOut" },
+            y: { duration: 6, repeat: Infinity, ease: "easeInOut" }
+          }}
           className="absolute inset-0 md:inset-2 bg-contain md:bg-cover bg-no-repeat bg-center"
           style={{ backgroundImage: `url(${activeTheme.bgImage})` }} />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/60" />
