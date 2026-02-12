@@ -78,7 +78,6 @@ Going Home: Click the Home (House) icon at the top of the sidebar to exit the AI
 <img width="1919" height="945" alt="image" src="https://github.com/user-attachments/assets/25d96e16-90fb-4d89-a3d9-879c5e3a629e" />
 <img width="1919" height="946" alt="image" src="https://github.com/user-attachments/assets/5afe3f3c-9418-4c15-bd2e-a06f60859e9d" />
 
-When using mobile phone:
 <img width="386" height="840" alt="image" src="https://github.com/user-attachments/assets/d61ba3f9-33b4-448f-a675-d52d168e69ef" />
 <img width="385" height="842" alt="image" src="https://github.com/user-attachments/assets/83d70c80-4ca9-4ae7-bb47-655f3abf5701" />
 <img width="384" height="837" alt="image" src="https://github.com/user-attachments/assets/84e9211b-d5d3-4293-949a-aedd626be665" />
