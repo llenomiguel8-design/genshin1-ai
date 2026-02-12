@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Plus, Settings, Send, User,
-  ChevronRight, Zap
+  ChevronRight, Zap, Brain, Activity
 } from 'lucide-react';
 import { startChat, sendMessage } from './services/gemini';
 import personaRaw from './persona.txt?raw';
@@ -90,7 +90,7 @@ const GenshinChat = () => {
             ] // The "Flicker"
           }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute inset-2 bg-cover bg-center opacity-900"
+          className="absolute inset-0 md:inset-2 bg-contain md:bg-cover bg-no-repeat bg-center opacity-900"
           style={{ backgroundImage: `url(https://fastcdn.hoyoverse.com/content-v2/hk4e/158502/5f018fa19e3126856550af1c6a72bbde_6443717322543034887.jpg)` }}
         />
 
@@ -131,7 +131,7 @@ const GenshinChat = () => {
       {/* --- SIDEBAR SWIPE HANDLE (Open Trigger) --- */}
       {!isSidebarOpen && (
         <motion.div
-          className="fixed left-0 top-0 bottom-0 w-16 z-50 cursor-grab active:cursor-grabbing lg:hidden flex items-center group touch-none"
+          className="fixed left-0 top-0 bottom-0 w-16 z-50 cursor-grab active:cursor-grabbing flex items-center group touch-none"
           onPanEnd={(e, info) => {
             if (info.offset.x > 50 || info.velocity.x > 400) setIsSidebarOpen(true);
           }}
@@ -152,6 +152,7 @@ const GenshinChat = () => {
 
         <motion.aside
           drag="x"
+          dragDirectionLock
           dragConstraints={{ left: -sidebarWidth, right: 0 }}
           dragElastic={0.2}
           onDragEnd={(e, info) => {
@@ -169,6 +170,15 @@ const GenshinChat = () => {
             <div className="text-2xl italic font-black flex items-center gap-2 tracking-tighter uppercase text-white/90">
               <User className="text-[#ff6a00]" size={24} /> AI-SYSTEM
             </div>
+            <button
+              onClick={() => setIsSidebarOpen(false)}
+              className="absolute top-8 right-8 text-gray-500 hover:text-white transition-colors"
+            >
+              <div className="relative w-6 h-6">
+                <div className="absolute top-1/2 left-0 w-full h-[2px] bg-current rotate-45" />
+                <div className="absolute top-1/2 left-0 w-full h-[2px] bg-current -rotate-45" />
+              </div>
+            </button>
           </div>
 
           <div className="space-y-8 flex-1 overflow-y-auto no-scrollbar pr-2">
@@ -200,6 +210,53 @@ const GenshinChat = () => {
                     {id}
                   </motion.button>
                 ))}
+              </div>
+            </SidebarSection>
+
+            <SidebarSection label="System Modules">
+              <div className="flex flex-col gap-2">
+                {/* Archives - Placeholder */}
+                <button className="flex items-center gap-3 p-3 rounded-xl bg-[#1a1816] border border-white/5 hover:border-[#ff6a00]/30 hover:bg-[#201d1b] transition-all group text-left">
+                  <div className="p-2 rounded-lg bg-black/40 text-gray-400 group-hover:text-[#ff6a00] transition-colors">
+                    <Settings size={16} />
+                  </div>
+                  <div>
+                    <div className="text-[11px] font-bold text-gray-300 uppercase tracking-wider">Archives</div>
+                    <div className="text-[9px] text-gray-500 italic">Data fragments & logs</div>
+                  </div>
+                </button>
+
+                {/* Terminal - Placeholder */}
+                <button className="flex items-center gap-3 p-3 rounded-xl bg-[#1a1816] border border-white/5 hover:border-[#ff6a00]/30 hover:bg-[#201d1b] transition-all group text-left">
+                  <div className="p-2 rounded-lg bg-black/40 text-gray-400 group-hover:text-[#ff6a00] transition-colors">
+                    <Zap size={16} />
+                  </div>
+                  <div>
+                    <div className="text-[11px] font-bold text-gray-300 uppercase tracking-wider">Terminal</div>
+                    <div className="text-[9px] text-gray-500 italic">System override</div>
+                  </div>
+                </button>
+
+                {/* Neural Guide - Functional */}
+                <button
+                  onClick={() => {
+                    setMessages(prev => [...prev, {
+                      role: 'ai',
+                      text: "ACCESSING GUIDE PROTOCOL...\n\n1. SELECT PERSONA: Choose 'Aether' or 'Lumine' from the Active Personnel list.\n2. COMMUNICATION MODE: Switch between 'Message', 'Email', etc. to change the tone.\n3. INPUT: Type your query in the field below to sync with the Neural Network.\n\n*System ready for input.*"
+                    }]);
+                    if (window.innerWidth < 1024) setIsSidebarOpen(false);
+                  }}
+                  className="flex items-center gap-3 p-3 rounded-xl bg-[#2a241f] border border-[#ff6a00]/20 hover:bg-[#ff6a00]/10 transition-all group text-left relative overflow-hidden"
+                >
+                  <div className="absolute inset-0 bg-[#ff6a00]/5 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+                  <div className="p-2 rounded-lg bg-[#ff6a00]/10 text-[#ff6a00] shadow-[0_0_10px_#ff6a0040]">
+                    <ChevronRight size={16} />
+                  </div>
+                  <div>
+                    <div className="text-[11px] font-bold text-[#ff6a00] uppercase tracking-wider">Neural Guide</div>
+                    <div className="text-[9px] text-[#ff6a00]/70 italic">Initiate user manual</div>
+                  </div>
+                </button>
               </div>
             </SidebarSection>
 
