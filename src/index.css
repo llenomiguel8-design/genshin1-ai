@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+.landing-bg {
+    background-image: url('https://images.alphacoders.com/133/1330927.jpg');
+}
+
+@media (min-width: 768px) {
+    .landing-bg {
+        background-image: url('https://w.wallhaven.cc/full/we/wallhaven-we725r.jpg');
+    }
+}

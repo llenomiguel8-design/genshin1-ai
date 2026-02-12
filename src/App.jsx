@@ -156,7 +156,7 @@ const ChatInterface = ({ onHome }) => {
             scale: { duration: 20, repeat: Infinity, ease: "easeInOut" },
             y: { duration: 6, repeat: Infinity, ease: "easeInOut" }
           }}
-          className="absolute inset-0 md:inset-2 bg-contain md:bg-cover bg-no-repeat bg-center"
+          className="absolute inset-0 md:inset-2 bg-cover bg-no-repeat bg-center"
           style={{ backgroundImage: `url(${activeTheme.bgImage})` }} />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/60" />
       </div>
