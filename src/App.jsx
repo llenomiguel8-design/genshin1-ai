@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  Plus, Settings, Send, User,
+  Plus, Settings, Send, User, Home,
   ChevronRight, Zap, Brain, Activity, Terminal, HelpCircle
 } from 'lucide-react';
 import { startChat, sendMessage } from './services/gemini';
 import personaRaw from './persona.txt?raw';
+import LandingPage from './components/LandingPage';
+import AboutPage from './components/AboutPage';
 
 const THEMES = {
   Aether: {
@@ -26,15 +28,15 @@ const THEMES = {
   },
   Furina: {
     primary: '#0066888c',
-    accent: 'rgba(55, 115, 134, 0.2)',
+    accent: 'rgba(104, 113, 116, 0.2)',
     bgImage: 'https://static0.srcdn.com/wordpress/wp-content/uploads/2023/09/genshin-impact-42-playable-characters-banners-furina-focalors-charlotte.jpg?w=1200&h=675&fit=crop',
     particle: '#61adc7ff',
     scanline: 'rgba(96, 176, 202, 0.4)',
-    syncMsg: "My, my, aren't you a fascinating specimen? I am Furina de Fontaine! What brings you to my audience today?"
+    syncMsg: "My, aren't you a fascinating specimen? I am Furina de Fontaine! What brings you to my audience today?"
   },
 };
 
-const GenshinChat = () => {
+const ChatInterface = ({ onHome }) => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
@@ -226,6 +228,13 @@ const GenshinChat = () => {
                         <div className="text-[9px] text-gray-500 italic">Advanced commands</div>
                       </div>
                     </button>
+                    <button onClick={onHome} className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 transition-all text-left">
+                      <Home size={16} className="text-gray-500" />
+                      <div>
+                        <div className="text-[11px] font-bold uppercase tracking-wider">Return Home</div>
+                        <div className="text-[9px] text-gray-500 italic">Back to landing page</div>
+                      </div>
+                    </button>
                   </div>
                 </SidebarSection>
               </div>
@@ -307,4 +316,30 @@ const Typewriter = ({ text }) => {
   return <span className="whitespace-pre-wrap">{displayedText}</span>;
 };
 
-export default GenshinChat;
+const App = () => {
+  const [view, setView] = useState('landing');
+
+  return (
+    <>
+      <AnimatePresence mode="wait">
+        {view === 'landing' && (
+          <motion.div key="landing" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="absolute inset-0 z-50">
+            <LandingPage onPlay={() => setView('chat')} onAbout={() => setView('about')} />
+          </motion.div>
+        )}
+        {view === 'about' && (
+          <motion.div key="about" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="absolute inset-0 z-50">
+            <AboutPage onBack={() => setView('landing')} />
+          </motion.div>
+        )}
+        {view === 'chat' && (
+          <motion.div key="chat" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="absolute inset-0">
+            <ChatInterface onHome={() => setView('landing')} />
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+};
+
+export default App;
