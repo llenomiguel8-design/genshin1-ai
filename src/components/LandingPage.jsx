@@ -8,7 +8,7 @@ const LandingPage = ({ onPlay, onAbout }) => {
             <div
                 className="absolute inset-0 z-0 bg-cover bg-center"
                 style={{
-                    backgroundImage: `url('https://fastcdn.hoyoverse.com/content-v2/plat/124031/5d2ba4371115d26de4c574b28311aed8_576844151847376526.jpeg')`
+                    backgroundImage: `url('https://w.wallhaven.cc/full/we/wallhaven-we725r.jpg')`
                 }}
             >
                 <div className="absolute inset-0 bg-black/20" /> {/* Slight overlay for readability */}
