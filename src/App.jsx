@@ -23,7 +23,15 @@ const THEMES = {
     particle: '#00e5ff',
     scanline: 'rgba(0, 229, 255, 0.4)',
     syncMsg: 'Hi I am Lumine, your twin sister, and Im here to help you on your journey through Teyvat. What would you like to do today?'
-  }
+  },
+  Furina: {
+    primary: '#0066888c',
+    accent: 'rgba(55, 115, 134, 0.2)',
+    bgImage: 'https://static0.srcdn.com/wordpress/wp-content/uploads/2023/09/genshin-impact-42-playable-characters-banners-furina-focalors-charlotte.jpg?w=1200&h=675&fit=crop',
+    particle: '#61adc7ff',
+    scanline: 'rgba(96, 176, 202, 0.4)',
+    syncMsg: "My, my, aren't you a fascinating specimen? I am Furina de Fontaine! What brings you to my audience today?"
+  },
 };
 
 const GenshinChat = () => {
@@ -61,7 +69,7 @@ const GenshinChat = () => {
       sections.forEach(section => {
         const trimmed = section.trim();
         if (!trimmed) return;
-        if (trimmed === 'Aether' || trimmed === 'Lumine') currentKey = trimmed;
+        if (trimmed === 'Aether' || trimmed === 'Lumine' || trimmed === 'Furina') currentKey = trimmed;
         else if (currentKey) { personas[currentKey] = trimmed; currentKey = null; }
       });
       return personas;
@@ -180,7 +188,7 @@ const GenshinChat = () => {
               <div className="space-y-8 flex-1 overflow-y-auto no-scrollbar">
                 <SidebarSection label="Active Personnel">
                   <div className="flex gap-1 bg-black/40 rounded-full p-1 border border-white/5">
-                    {['Aether', 'Lumine'].map((p) => (
+                    {['Aether', 'Lumine', 'Furina'].map((p) => (
                       <button key={p} onClick={() => switchPersona(p)}
                         className={`flex-1 py-2 text-[11px] font-bold italic rounded-full transition-all ${currentPersona === p ? 'text-black' : 'text-gray-500'}`}
                         style={{ backgroundColor: currentPersona === p ? activeTheme.primary : 'transparent', boxShadow: currentPersona === p ? `0 0 10px ${activeTheme.primary}66` : 'none' }}>
