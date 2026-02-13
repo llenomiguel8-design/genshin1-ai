@@ -12,25 +12,30 @@ It is designed to look and feel like a high-tech terminal found within the game'
 
 Key Benefits for the User
 Why would someone use Genshin1.AI?
+
 1. Immersive Roleplay & Fandom Interaction
 Fans of the game often want to interact with their favorite characters in a way that feels "in-universe."
 Aether/Lumine: Users can talk to the Travelers as if they are checking in on their journey.
 Furina: Users can enjoy her flamboyant, theatrical personality while asking for help.
 The UI/UX (the glitch effects, background transitions, and scanlines) makes the user feel like they are actually operating a terminal in Teyvat.
+
 2. Specialized Game Assistant (The "Archives")
 Instead of searching a wiki, a user can use this AI to ask hyper-specific questions about the game.
 "What is the history of the Guizhong Ballista?"
 "Can you suggest a team comp for Furina using only F2P characters?"
 Because it uses Gemini Pro, it can process complex logic better than a simple search engine.
+
 3. Creative Writing and "Musing"
 The "Creative" mode in your sidebar is perfect for fan-fiction writers or theory-crafters.
 A writer might use the Lumine persona to help brainstorm a strategic battle scene.
 A player might use the Furina persona to write a dramatic script for a community event.
+
 4. A Aesthetic Productivity Tool
 Some people find standard AI interfaces (like ChatGPT or Claude) to be boring or "too corporate."
 Genshin1.AI offers a "Program" mode and "Email" mode. This allows a developer or a student to do their actual work (coding, writing emails) inside a high-quality, beautiful interface that reflects their hobby.
 
 and for what is this chatbot?
+
 This chatbot is for Genshin Impact fans who want a high-tech, lore-accurate, and character-driven way to interact with AI for both gaming help and creative inspiration.
 
 
